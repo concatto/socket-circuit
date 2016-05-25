@@ -1,0 +1,17 @@
+html
+  head
+    title Socket Circuit
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='style.css')
+    script(src='https://cdn.socket.io/socket.io-1.4.5.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+    script(type='text/javascript').
+      var socket = io();
+
+      socket.on("createBlock", function(params) {
+        $("#container").append('<div style="background-color:' + params.color + ';"></div>');
+      });
+
+  body
+    #root
+      #container
